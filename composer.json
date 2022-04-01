@@ -1,0 +1,29 @@
+{
+    "name": "vulcain-technology/form",
+    "description": "Full form management",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "VulcainTechnology\\Form\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "VulcainTechnology\\Form\\Http\\FormServiceProvider"
+            ],
+            "aliases": {
+                "Form": "VulcainTechnology\\Form\\Http\\FormFacade"
+            }
+        }
+    },
+    "authors": [
+        {
+            "name": "Vulcain Technology"
+        }
+    ],
+    "version": "0.0.1",
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
