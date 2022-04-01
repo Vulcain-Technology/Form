@@ -14,9 +14,9 @@ class FormController
      */
     public function input(array $options): Factory|View|Application
     {
-        if(!$options['type']) $options['type'] = "text";
+        if(!array_key_exists('type', $options)) $options['type'] = "text";
 
-        if(!$options['name']) abort(449, "An input must have name property.");
+        if(!array_key_exists('name', $options)) abort(449, "An input must have name property.");
 
         return view('views.input', compact('options'));
     }
