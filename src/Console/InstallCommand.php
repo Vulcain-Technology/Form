@@ -37,6 +37,12 @@ class InstallCommand extends Command
                 ] + $packages;
         });
 
+        // Update CSS and JS resources
+        if(!$this->option('base')) {
+            copy(__DIR__.'/../../stubs/resources/css/app.css', resource_path('css/app.css'));
+            copy(__DIR__.'/../../stubs/resources/js/app.js', resource_path('js/app.js'));
+        }
+
         // Views...
         (new Filesystem)->ensureDirectoryExists(resource_path('views/components'));
         (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/default/resources/views/components', resource_path('views/components'));
